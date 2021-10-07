@@ -55,11 +55,11 @@ console.log(val5);
  * テンプレート文字列
  */
 
-// const name = "connie";
-// const age = "20";
+const name = "connie";
+const age = "20";
 
-// const message = `私の名前は${name}です。年齢は${age}歳です。`;
-// console.log(message);
+const message = `私の名前は${name}です。年齢は${age}歳です。`;
+console.log(message);
 
 /**
  * アロー関数
@@ -121,3 +121,50 @@ console.log(num2);
 console.log(arr3); // [3, 4, 5 ]
 
 // 配列のコピー、結合
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+const arr6 = [...arr4];
+console.log(arr6);
+
+const arr7 = [...arr4, ...arr5];
+console.log(arr7);
+
+// //map, filerを使った配列の処理
+const nameArr = ["田中", "山田", "鈴木"];
+
+//新しい配列を生成する
+const nameArr2 = nameArr.map((name) => {
+  return name;
+});
+console.log(nameArr2);
+nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です`));
+
+//条件に合った新しい配列を生成する
+const numArr = [1, 2, 3, 4, 5];
+const oddNumArr = numArr.filter((num) => {
+  return num % 2 === 0;
+});
+console.log(oddNumArr);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "鈴木") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+// ある条件 ? 条件がtrueの時 : 条件がfalseの時
+const num = "1300";
+const formattedNum =
+  typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
+console.log(formattedNum);
+
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100 ? "100を超えています" : "許容範囲ないです";
+};
+console.log(checkSum(50, 110));
